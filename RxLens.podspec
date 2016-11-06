@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
                         Some examples for lenses can be found in this [blog post](http://chris.eidhof.nl/post/lenses-in-swift/).
                         DESC
   s.homepage         = "https://vknabel.github.io/RxLens"
-  s.license          = { :type => "MIT", :file => "LICENSE.md" }
+  s.license          = { :type => "MIT", :file => "LICENSE" }
   s.author           = { "Valentin Knabel" => "dev@vknabel.com" }
   s.social_media_url = "https://twitter.com/vknabel"
   s.source           = { :git => "https://github.com/vknabel/RxLens.git", :tag => s.version.to_s }
