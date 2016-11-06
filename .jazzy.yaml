@@ -1,0 +1,10 @@
+author: Valentin Knabel
+author_url: https://twitter.com/vknabel
+github_url: https://github.com/vknabel/RxLens
+module: RxLens
+module_version: 0.1.0
+root_url: https://vknabel.github.io/RxLens/
+readme: README.md
+output: docs/
+theme: fullwidth
+documentation: Guides/*
