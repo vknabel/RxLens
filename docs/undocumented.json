@@ -1,0 +1,26 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/vknabel/Developer/vknabel/RxLens/Sources/LensSubject.swift",
+      "line": 32,
+      "symbol": "LensSubject.asObserver()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/vknabel/Developer/vknabel/RxLens/Sources/LensSubject.swift",
+      "line": 45,
+      "symbol": "LensSubject.subscribe(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/vknabel/Developer/vknabel/RxLens/Sources/LensSubject.swift",
+      "line": 49,
+      "symbol": "LensSubject.asObservable()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/vknabel/Developer/vknabel/RxLens"
+}

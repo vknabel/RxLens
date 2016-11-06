@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>RxLens  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+
+
+    <a title="RxLens  Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="index.html">
+          RxLens Docs
+        </a>
+         (78% documented)
+      </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/vknabel/RxLens">
+            <img class="header-icon" src="img/gh.png"/>
+            View on GitHub
+          </a>
+        </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="dash-feed://https%3A%2F%2Fvknabel%2Egithub%2Eio%2FRxLens%2Fdocsets%2FRxLens%2Exml">
+            <img class="header-icon" src="img/dash.png"/>
+            Install in Dash
+          </a>
+        </p>
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="index.html">RxLens Reference</a>
+      <img class="carat" src="img/carat.png" />
+      RxLens  Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/LensSubject.html">LensSubject</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Extensions/ObservableType.html">ObservableType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Extensions/ObserverType.html">ObserverType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs/Lens.html">Lens</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content">
+            
+            <p><a href=""><img src="https://img.shields.io/cocoapods/v/RxLens.svg?maxAge=2592000&amp;style=flat-square" alt="CocoaPods"></a>
+<a href=""><img src="https://img.shields.io/cocoapods/p/RxLens.svg?maxAge=2592000&amp;style=flat-square" alt="CocoaPods"></a>
+<a href=""><img src="https://img.shields.io/badge/install-SwiftPM%20%7C%20Cocoapods-lightgrey.svg?style=flat-square" alt="Install"></a>
+<a href=""><img src="https://img.shields.io/cocoapods/l/RxLens.svg?maxAge=2592000&amp;style=flat-square" alt="License"></a></p>
+<a href='#rxlens' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='rxlens'>RxLens</h1>
+
+<p>Enables reactive read and copy-on-write access for an entity&rsquo;s property in a data structure.</p>
+
+<p>Check out the generated docs at <a href="https://vknabel.github.io/RxLens/">vknabel.github.io/RxLens</a>.</p>
+<a href='#introduction' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='introduction'>Introduction</h2>
+
+<p>First we need to declare our data structure and an according lens for our property.
+An explanation for lenses can be found in this <a href="http://chris.eidhof.nl/post/lenses-in-swift/">blog post</a> of Chris Eidhof.</p>
+<pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">Person</span><span class="p">:</span> <span class="kt">Equatable</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span>
+
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">Lens</span><span class="o">&lt;</span><span class="kt">Person</span><span class="p">,</span> <span class="kt">String</span><span class="o">&gt;</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kt">Lens</span><span class="p">(</span>
+            <span class="nv">from</span><span class="p">:</span> <span class="p">{</span> <span class="nv">$0</span><span class="o">.</span><span class="n">name</span> <span class="p">},</span>
+            <span class="nv">to</span><span class="p">:</span> <span class="p">{</span> <span class="n">name</span><span class="p">,</span> <span class="n">_</span> <span class="k">in</span> <span class="kt">Person</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="n">name</span><span class="p">)</span> <span class="p">}</span>
+        <span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<a href='#lens-subject' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='lens-subject'>Lens Subject</h3>
+
+<p>You may create a subject that will only reflect changes of the name and allows pushing new names.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">personBehavior</span> <span class="o">=</span> <span class="kt">BehaviorSubject</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="kt">Person</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Valentin Knabel"</span><span class="p">))</span>
+<span class="k">let</span> <span class="nv">nameSubject</span> <span class="o">=</span> <span class="kt">LensSubject</span><span class="p">(</span><span class="nv">subject</span><span class="p">:</span> <span class="n">personBehavior</span><span class="p">,</span> <span class="nv">lens</span><span class="p">:</span> <span class="kt">Person</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+</code></pre>
+<a href='#operators' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='operators'>Operators</h3>
+
+<p>The following operators will be defined by using the following subject.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">personSubject</span> <span class="o">=</span> <span class="kt">PublishSubject</span><span class="o">&lt;</span><span class="kt">Person</span><span class="o">&gt;</span><span class="p">()</span>
+</code></pre>
+
+<p>First of all you can use your lenses in order to access properties of your data structure with <code>Observable.from(_:)</code>.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">nameSubject</span> <span class="o">=</span> <span class="n">personSubject</span><span class="o">.</span><span class="nf">asObservable</span><span class="p">()</span><span class="o">.</span><span class="nf">from</span><span class="p">(</span><span class="kt">Person</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+</code></pre>
+
+<p>Additionally you can use <code>Observer.to(_:, with:)</code> in order to only observe changes of your property.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">nameObserver</span> <span class="o">=</span> <span class="n">personSubject</span><span class="o">.</span><span class="nf">asObserver</span><span class="p">()</span><span class="o">.</span><span class="nf">to</span><span class="p">(</span><span class="kt">Person</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="nv">with</span><span class="p">:</span> <span class="kt">Person</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Initial"</span><span class="p">))</span>
+</code></pre>
+<a href='#installation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='installation'>Installation</h2>
+
+<p>RxLens is a Swift only project and supports <a href="https://github.com/apple/swift-package-manager">Swift Package Manager</a> and <a href="https://github.com/CocoaPods/CocoaPods">CocoaPods</a>.</p>
+<a href='#swift-package-manager' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='swift-package-manager'>Swift Package Manager</h3>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">PackageDescription</span>
+
+<span class="k">let</span> <span class="nv">package</span> <span class="o">=</span> <span class="kt">Package</span><span class="p">(</span>
+    <span class="nv">name</span><span class="p">:</span> <span class="s">"YourPackage"</span><span class="p">,</span>
+    <span class="nv">dependencies</span><span class="p">:</span> <span class="p">[</span>
+        <span class="o">.</span><span class="kt">Package</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/vknabel/RxLens.git"</span><span class="p">,</span> <span class="nv">majorVersion</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+</code></pre>
+<a href='#cocoapods' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='cocoapods'>CocoaPods</h3>
+<pre class="highlight ruby"><code><span class="n">source</span> <span class="s1">'https://github.com/CocoaPods/Specs.git'</span>
+<span class="n">use_frameworks!</span>
+
+<span class="n">pod</span> <span class="s1">'RxLens'</span><span class="p">,</span> <span class="s1">'~&gt; 0.1'</span>
+</code></pre>
+<a href='#author' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='author'>Author</h2>
+
+<p>Valentin Knabel, <a href="mailto:dev@vknabel.com">dev@vknabel.com</a></p>
+<a href='#license' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='license'>License</h2>
+
+<p>EasyInject is available under the MIT license. See the LICENSE file for more info.</p>
+
+          </div>
+        </section>
+
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2016 <a class="link" href="https://twitter.com/vknabel" target="_blank" rel="external">Valentin Knabel</a>. All rights reserved. (Last updated: 2016-11-06)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>
