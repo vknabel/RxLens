@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "RxLens"
-  s.version          = "0.1.1"
+  s.version          = "0.1.2"
   s.summary          = "Enables reactive read and copy-on-write access."
   s.description      = <<-DESC
                         Enables reactive read and copy-on-write access for an entity's property in a datastructure.

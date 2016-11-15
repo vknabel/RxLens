@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		36476D882DE0DF777C65D1D6 /* Pods_RxLens.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F297CC3872673504D201191 /* Pods_RxLens.framework */; };
+		BA2B38F11DDB72A900B322C0 /* Lens+Children.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2B38F01DDB72A900B322C0 /* Lens+Children.swift */; };
 		BA676CB61DCF9FA200F36B47 /* RxLens.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA676CAC1DCF9FA200F36B47 /* RxLens.framework */; };
 		BA676CBD1DCF9FA200F36B47 /* RxLens.h in Headers */ = {isa = PBXBuildFile; fileRef = BA676CAF1DCF9FA200F36B47 /* RxLens.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BA676CD21DCFA34A00F36B47 /* Lens.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA676CCE1DCFA34A00F36B47 /* Lens.swift */; };
@@ -34,6 +35,7 @@
 		2D7322CA52B14CF058F31E5A /* Pods_RxLensTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxLensTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		754EC0B28E577EB2A160DC7C /* Pods-RxLens.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxLens.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxLens/Pods-RxLens.release.xcconfig"; sourceTree = "<group>"; };
 		9AEE940A63135DF60FBC3C3F /* Pods-RxLens.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxLens.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxLens/Pods-RxLens.debug.xcconfig"; sourceTree = "<group>"; };
+		BA2B38F01DDB72A900B322C0 /* Lens+Children.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Lens+Children.swift"; sourceTree = "<group>"; };
 		BA676CAC1DCF9FA200F36B47 /* RxLens.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxLens.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA676CAF1DCF9FA200F36B47 /* RxLens.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RxLens.h; sourceTree = "<group>"; };
 		BA676CB01DCF9FA200F36B47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			children = (
 				BA676CAF1DCF9FA200F36B47 /* RxLens.h */,
 				BA676CCE1DCFA34A00F36B47 /* Lens.swift */,
+				BA2B38F01DDB72A900B322C0 /* Lens+Children.swift */,
 				BA676CCF1DCFA34A00F36B47 /* LensOperator.swift */,
 				BA676CD01DCFA34A00F36B47 /* LensSubject.swift */,
 				BA676CD11DCFA34A00F36B47 /* LensSubject+Convenience.swift */,
@@ -327,6 +330,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA2B38F11DDB72A900B322C0 /* Lens+Children.swift in Sources */,
 				BA676CD41DCFA34A00F36B47 /* LensSubject.swift in Sources */,
 				BA676CD21DCFA34A00F36B47 /* Lens.swift in Sources */,
 				BA676CD51DCFA34A00F36B47 /* LensSubject+Convenience.swift in Sources */,
